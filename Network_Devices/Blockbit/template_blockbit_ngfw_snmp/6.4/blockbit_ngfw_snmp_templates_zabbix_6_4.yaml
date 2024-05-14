@@ -42,6 +42,20 @@ zabbix_export:
           tags:
             - tag: Application
               value: 'Services BLOCKBIT'
+            - tag: component
+              value: network
+        - uuid: 6a596ed8c5be48d5aca63c6c727631da
+          name: 'Blockbit NGFW: SNMP Walk IPv4 address'
+          type: SNMP_AGENT
+          snmp_oid: 'walk[1.3.6.1.4.1.8072.1.3.2.4.1.2.10.73.78.84.69.82.70.65.67.69.83,1.3.6.1.4.1.8072.1.3.2.4.1.2.6.73.80.65.68.68.82]'
+          key: blockbit.net.ip.walk
+          history: '0'
+          trends: '0'
+          value_type: TEXT
+          description: 'Discovering IPv4 address'
+          tags:
+            - tag: component
+              value: raw
         - uuid: fd1379e21fa5428492f6801441c61ec9
           name: 'Blockbit NGFW: Threat Protection Service'
           type: SNMP_AGENT
@@ -53,7 +67,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 78c145d1a8394a27a80bffd17ad4bb6e
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.atp.status,1m,"like","enabled:stopped")=1'
@@ -73,7 +87,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 934271ae29e74d42a4c0ba8e346eba05
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.auth-ldap.status,1m,"like","enabled:stopped")=1'
@@ -93,7 +107,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 7a81d7db12284cd68243adb9a90c3cb9
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.auth-radius.status,1m,"like","enabled:stopped")=1'
@@ -113,7 +127,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: b933d2b346e74b4ebc0e7bd2b396d327
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.auth-server.status,1m,"like","enabled:stopped")=1'
@@ -133,7 +147,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: df473f11c11340b09c6551279e1d9be0
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.auth-windows.status,1m,"like","enabled:stopped")=1'
@@ -153,7 +167,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 7934140a2d554d57a2fc3d19c4da5346
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.dhcp-relay.status,1m,"like","enabled:stopped")=1'
@@ -184,7 +198,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 666a2f3ca463487a8aab3d75b6043592
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.dhcp-server-v4.status,1m,"like","enabled:stopped")=1'
@@ -204,7 +218,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: f772aaa093204010a839073a980a53c7
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.dhcp-server-v6.status,1m,"like","enabled:stopped")=1'
@@ -224,7 +238,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: ba8c9bf51c90409d9ad913e9ccd9ea6c
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.dns.status,1m,"like","enabled:stopped")=1'
@@ -244,7 +258,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: bbf959a1b6e349a599e64927e4fb18d1
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.dpi.status,1m,"like","enabled:stopped")=1'
@@ -264,7 +278,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 6631cadd219b4a14b7955534e208b5a0
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.firewall.status,1m,"like","enabled:stopped")=1'
@@ -284,7 +298,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: e5a734c812834451ac18aba859fac7c5
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.gsm-deployer.status,1m,"like","enabled:stopped")=1'
@@ -304,7 +318,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: f1a220c5a6a54cb5a24e10432697f241
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.gsm-logger.status,1m,"like","enabled:stopped")=1'
@@ -324,7 +338,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 637fea0bb4f64673b9dd85590c2c226a
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.ips.status,1m,"like","enabled:stopped")=1'
@@ -344,7 +358,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 5b74e41791de4950be24e85add58b2bd
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.monitor.status,1m,"like","enabled:stopped")=1'
@@ -364,7 +378,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 000341b71c904830b8ca714434e295dc
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.proxy-email.status,1m,"like","enabled:stopped")=1'
@@ -384,7 +398,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: d69b4967174e4dc185dc9cc4f9ecd7a4
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.proxy-ftp.status,1m,"like","enabled:stopped")=1'
@@ -404,7 +418,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 55911409f2d340f180e8fae6ca1c781c
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.proxy-http.status,1m,"like","enabled:stopped")=1'
@@ -424,7 +438,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 5bbfcbefa3034530a38c7f723a4fe8a2
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.proxy-pop3.status,1m,"like","enabled:stopped")=1'
@@ -444,11 +458,31 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 975db0ad9f1442a1a51c0d245f8ba520
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.proxy-smtp.status,1m,"like","enabled:stopped")=1'
               name: 'Blockbit NGFW: Proxy SMTP service is not running'
+              priority: HIGH
+              tags:
+                - tag: scope
+                  value: availability
+        - uuid: a38ee0ed12f34d8bb77c20b88eb0dde6
+          name: 'Blockbit NGFW: Proxy SSH Service'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.8.83.69.82.86.73.67.69.83.44
+          key: blockbit.service.proxy-ssh.status
+          trends: '0'
+          value_type: CHAR
+          tags:
+            - tag: Application
+              value: 'Services BLOCKBIT'
+            - tag: component
+              value: service
+          triggers:
+            - uuid: 801f7921a56247a18baca78b516dc0cf
+              expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.proxy-ssh.status,1m,"like","enabled:stopped")=1'
+              name: 'Blockbit NGFW: Proxy SSH service is not running'
               priority: HIGH
               tags:
                 - tag: scope
@@ -464,7 +498,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 5269e8c88f87451894857f1cd5c44ac5
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.proxy-ssl.status,1m,"like","enabled:stopped")=1'
@@ -484,7 +518,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 96fb7784a2844c59b25c5e7d6c4b4695
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.publisher.status,1m,"like","enabled:stopped")=1'
@@ -504,7 +538,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: ffa010a9352241d38a766a908cd11b86
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.reporter.status,1m,"like","enabled:stopped")=1'
@@ -524,7 +558,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: ee983870e9f241d08035d45c646a3140
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.router-bgp.status,1m,"like","enabled:stopped")=1'
@@ -544,7 +578,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 4f7118d989ef4b418fde178197e5a05d
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.router-nat64.status,1m,"like","enabled:stopped")=1'
@@ -564,7 +598,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: c0fcb3669e3248898d93a9fe6aa94355
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.router-ospf.status,1m,"like","enabled:stopped")=1'
@@ -584,7 +618,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: a55f3885e64d47ce8ceecec705b057c7
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.router-pim.status,1m,"like","enabled:stopped")=1'
@@ -604,7 +638,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 054badcbeca8433f927ef8cd9db70215
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.router-rip.status,1m,"like","enabled:stopped")=1'
@@ -624,7 +658,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 9736b0d762054b1ea4f72432b1988ad7
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.sd-wan.status,1m,"like","enabled:stopped")=1'
@@ -644,7 +678,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 2d9a5a0db8554181bcf6522204491e1d
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.system-admin.status,1m,"like","enabled:stopped")=1'
@@ -664,7 +698,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 398b1ef566b8404f83eacba33f10937e
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.system-db.status,1m,"like","enabled:stopped")=1'
@@ -684,7 +718,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: a0925236171e453eb5c1f60c69df98d7
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.system-ha.status,1m,"like","enabled:stopped")=1'
@@ -704,7 +738,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 2ae36b4a78914caeb21d4f0884a181c3
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.system-storage.status,1m,"like","enabled:stopped")=1'
@@ -724,7 +758,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 3b4094e91ed8437c8b0e0e4c8350de75
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.system-syslog.status,1m,"like","enabled:stopped")=1'
@@ -744,7 +778,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: fb4700c8172043389c958ef90407f9c6
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.system-terminal.status,1m,"like","enabled:stopped")=1'
@@ -753,6 +787,26 @@ zabbix_export:
               tags:
                 - tag: scope
                   value: availability
+        - uuid: 532543c1c94b43bdbc3e3934522d171e
+          name: 'Blockbit NGFW: VPN IPSEC Connecting'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.9.73.80.83.69.67.67.79.78.78.1
+          key: blockbit.service.vpn-ipsec.connecting
+          tags:
+            - tag: Application
+              value: 'Services BLOCKBIT'
+            - tag: component
+              value: service
+        - uuid: 8750d03f49a44d2997bf1da754527c51
+          name: 'Blockbit NGFW: VPN IPSEC Established'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.10.73.80.83.69.67.69.83.84.65.66.1
+          key: blockbit.service.vpn-ipsec.established
+          tags:
+            - tag: Application
+              value: 'Services BLOCKBIT'
+            - tag: component
+              value: service
         - uuid: c56f0457bfed49a8b36a1beb7b7b158f
           name: 'Blockbit NGFW: VPN IPSEC Service'
           type: SNMP_AGENT
@@ -764,7 +818,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: b6c5162f35b1439da1b0be073dba6c2f
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.vpn-ipsec.status,1m,"like","enabled:stopped")=1'
@@ -784,7 +838,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 349ef4b819f94b0189287409fe749eb3
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.vpn-monitor.status,1m,"like","enabled:stopped")=1'
@@ -804,7 +858,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 9376842268ff4ca995c8932b2f7c2440
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.vpn-ng.status,1m,"like","enabled:stopped")=1'
@@ -824,7 +878,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: c341d5d84f0c49aea411be428c940248
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.vpn-ssl.status,1m,"like","enabled:stopped")=1'
@@ -833,6 +887,21 @@ zabbix_export:
               tags:
                 - tag: scope
                   value: availability
+        - uuid: c6b471c489c243c09274a79c74377e99
+          name: 'Blockbit NGFW: Web Filter Clients'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.10.87.69.66.67.76.73.69.78.84.83.1
+          key: blockbit.service.webfilter.clients
+          preprocessing:
+            - type: STR_REPLACE
+              parameters:
+                - 'ERROR: Cannot connect to [::1]:127'
+                - '0'
+          tags:
+            - tag: Application
+              value: 'Services BLOCKBIT'
+            - tag: component
+              value: Service
         - uuid: 1140125c460043809931630e67b6ac46
           name: 'Blockbit NGFW: Web Filter Service'
           type: SNMP_AGENT
@@ -844,7 +913,7 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: e979c99a5f224683b8edd921701c463f
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.webfilter.status,1m,"like","enabled:stopped")=1'
@@ -864,31 +933,11 @@ zabbix_export:
             - tag: Application
               value: 'Services BLOCKBIT'
             - tag: component
-              value: Service
+              value: service
           triggers:
             - uuid: 719d634ca0b24d06a5dbbb6bcf596480
               expression: 'find(/Blockbit NGFW by SNMP/blockbit.service.wwan.status,1m,"like","enabled:stopped")=1'
               name: 'Blockbit NGFW: WWAN service is not running'
-              priority: HIGH
-              tags:
-                - tag: scope
-                  value: availability
-        - uuid: 5a9fe57bcf0e475a84175532e906ac0c
-          name: 'Blockbit NGFW: SNMP Service'
-          type: SNMP_AGENT
-          snmp_oid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.8.83.69.82.86.73.67.69.83.19
-          key: blockbit.snmp.status
-          trends: '0'
-          value_type: CHAR
-          tags:
-            - tag: Application
-              value: 'Services BLOCKBIT'
-            - tag: component
-              value: Service
-          triggers:
-            - uuid: 6625df0c67944c668a62ad851f1c30bb
-              expression: 'find(/Blockbit NGFW by SNMP/blockbit.snmp.status,1m,"like","enabled:stopped")=1'
-              name: 'Blockbit NGFW: SNMP service is not running'
               priority: HIGH
               tags:
                 - tag: scope
@@ -903,6 +952,8 @@ zabbix_export:
           tags:
             - tag: Application
               value: 'Services BLOCKBIT'
+            - tag: component
+              value: network
         - uuid: a25c97e5aa5548b38ca1fa8d7c9ed70e
           name: 'Blockbit NGFW: Incoming traffic summarized - RX'
           type: SNMP_AGENT
@@ -912,6 +963,8 @@ zabbix_export:
           tags:
             - tag: Application
               value: 'Services BLOCKBIT'
+            - tag: component
+              value: network
         - uuid: b8a1e7c14bfc459f8461e438290011bc
           name: 'Blockbit NGFW: Outbound traffic summarized - TX'
           type: SNMP_AGENT
@@ -921,6 +974,8 @@ zabbix_export:
           tags:
             - tag: Application
               value: 'Services BLOCKBIT'
+            - tag: component
+              value: network
         - uuid: a0bc17f40899405ab826f50b20455456
           name: 'Blockbit NGFW: ICMP ping'
           type: SIMPLE
@@ -1205,6 +1260,47 @@ zabbix_export:
             - type: DISCARD_UNCHANGED_HEARTBEAT
               parameters:
                 - 12h
+          tags:
+            - tag: component
+              value: system
+        - uuid: 76274ba415e74081b5ce42393b5406c0
+          name: 'Blockbit NGFW: Firmware version'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.11.83.72.79.87.86.69.82.83.73.79.78.1
+          key: system.hw.firmware
+          delay: 1h
+          history: 2w
+          trends: '0'
+          value_type: CHAR
+          description: 'Current firmware version.'
+          preprocessing:
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1d
+          tags:
+            - tag: component
+              value: system
+          triggers:
+            - uuid: 3557d723d57c4cb59d87afccc8925c29
+              expression: 'last(/Blockbit NGFW by SNMP/system.hw.firmware,#1)<>last(/Blockbit NGFW by SNMP/system.hw.firmware,#2) and length(last(/Blockbit NGFW by SNMP/system.hw.firmware))>0'
+              name: 'Blockbit NGFW: Firmware has changed'
+              opdata: 'Current value: {ITEM.LASTVALUE1}'
+              priority: INFO
+              description: 'Firmware version has changed. Acknowledge to close the problem manually.'
+              manual_close: 'YES'
+              tags:
+                - tag: scope
+                  value: notice
+        - uuid: 164b08031f5d4b80b44d14e0f9a4a59c
+          name: 'Blockbit NGFW: Hardware model name'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.9.83.72.79.87.77.79.68.69.76.1
+          key: system.hw.model
+          delay: 1h
+          history: 2w
+          trends: '0'
+          value_type: CHAR
+          inventory_link: MODEL
           tags:
             - tag: component
               value: system
@@ -1537,6 +1633,42 @@ zabbix_export:
                 - tag: scope
                   value: availability
       discovery_rules:
+        - uuid: f9ad7bb1a44549c09f3095ef241fa0de
+          name: 'IP Address Discovery'
+          type: DEPENDENT
+          key: blockbit.net.ip.discovery
+          delay: '0'
+          item_prototypes:
+            - uuid: 1c1ea243dd7548ad94d4598fc8ed2712
+              name: 'Interface {#IFNAME}: IP address'
+              type: DEPENDENT
+              key: 'blockbit.interface.[{#SNMPINDEX}]'
+              delay: '0'
+              trends: '0'
+              value_type: CHAR
+              preprocessing:
+                - type: SNMP_WALK_VALUE
+                  parameters:
+                    - '1.3.6.1.4.1.8072.1.3.2.4.1.2.6.73.80.65.68.68.82.{#SNMPINDEX}'
+                    - '0'
+              master_item:
+                key: blockbit.net.ip.walk
+              tags:
+                - tag: component
+                  value: network
+                - tag: interface
+                  value: '{#IFNAME}'
+          master_item:
+            key: blockbit.net.ip.walk
+          preprocessing:
+            - type: SNMP_WALK_TO_JSON
+              parameters:
+                - '{#IFNAME}'
+                - 1.3.6.1.4.1.8072.1.3.2.4.1.2.10.73.78.84.69.82.70.65.67.69.83
+                - '0'
+            - type: DISCARD_UNCHANGED_HEARTBEAT
+              parameters:
+                - 1h
         - uuid: 989533f531a24a59b36219b6be9928ce
           name: 'CPU discovery'
           type: DEPENDENT
@@ -2030,7 +2162,7 @@ zabbix_export:
             - uuid: defea1d9554b4ea2a4691f96b1b8a4e0
               name: 'Interface {#IFNAME}({#IFALIAS}): Inbound packets discarded'
               type: DEPENDENT
-              key: 'net.if.in.discards[ifInDiscards.{#SNMPINDEX}]'
+              key: 'net.if.in.discards[ifInDiscards.{#IFNAME}]'
               delay: '0'
               history: 7d
               description: |
@@ -2063,7 +2195,7 @@ zabbix_export:
             - uuid: c94c6517fb0e4e4cb5c51b2c7a572543
               name: 'Interface {#IFNAME}({#IFALIAS}): Inbound packets with errors'
               type: DEPENDENT
-              key: 'net.if.in.errors[ifInErrors.{#SNMPINDEX}]'
+              key: 'net.if.in.errors[ifInErrors.{#IFNAME}]'
               delay: '0'
               history: 7d
               description: |
@@ -2092,7 +2224,7 @@ zabbix_export:
             - uuid: ceb29dbf4e9842e99402001883dca18f
               name: 'Interface {#IFNAME}({#IFALIAS}): Bits received'
               type: DEPENDENT
-              key: 'net.if.in[ifHCInOctets.{#SNMPINDEX}]'
+              key: 'net.if.in[ifHCInOctets.{#IFNAME}]'
               delay: '0'
               history: 7d
               units: bps
@@ -2122,7 +2254,7 @@ zabbix_export:
             - uuid: 6dfef13c360941d9923060a0dba3c7ee
               name: 'Interface {#IFNAME}({#IFALIAS}): Outbound packets discarded'
               type: DEPENDENT
-              key: 'net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]'
+              key: 'net.if.out.discards[ifOutDiscards.{#IFNAME}]'
               delay: '0'
               history: 7d
               description: |
@@ -2155,7 +2287,7 @@ zabbix_export:
             - uuid: c0f4f4f6281a4992a3ecea848e0c62b8
               name: 'Interface {#IFNAME}({#IFALIAS}): Outbound packets with errors'
               type: DEPENDENT
-              key: 'net.if.out.errors[ifOutErrors.{#SNMPINDEX}]'
+              key: 'net.if.out.errors[ifOutErrors.{#IFNAME}]'
               delay: '0'
               history: 7d
               description: |
@@ -2184,7 +2316,7 @@ zabbix_export:
             - uuid: f70c3431a04b45f0b051a7f728b6d266
               name: 'Interface {#IFNAME}({#IFALIAS}): Bits sent'
               type: DEPENDENT
-              key: 'net.if.out[ifHCOutOctets.{#SNMPINDEX}]'
+              key: 'net.if.out[ifHCOutOctets.{#IFNAME}]'
               delay: '0'
               history: 7d
               units: bps
@@ -2214,7 +2346,7 @@ zabbix_export:
             - uuid: 02b30f3461fc4705a2d666a9cb46a8f7
               name: 'Interface {#IFNAME}({#IFALIAS}): Speed'
               type: DEPENDENT
-              key: 'net.if.speed[ifHighSpeed.{#SNMPINDEX}]'
+              key: 'net.if.speed[ifHighSpeed.{#IFNAME}]'
               delay: '0'
               history: 7d
               trends: '0'
@@ -2245,7 +2377,7 @@ zabbix_export:
             - uuid: ca9595d00e1d4c2db71d9dcbbff0f25c
               name: 'Interface {#IFNAME}({#IFALIAS}): Operational status'
               type: DEPENDENT
-              key: 'net.if.status[ifOperStatus.{#SNMPINDEX}]'
+              key: 'net.if.status[ifOperStatus.{#IFNAME}]'
               delay: '0'
               history: 7d
               trends: '0'
@@ -2276,26 +2408,20 @@ zabbix_export:
                   value: '{#IFNAME}'
               trigger_prototypes:
                 - uuid: 80394c9963924bcabb9dae345f2611be
-                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2 and (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#1)<>last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#2))'
+                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])=2 and (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}],#1)<>last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}],#2))'
                   recovery_mode: RECOVERY_EXPRESSION
-                  recovery_expression: 'last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
+                  recovery_expression: 'last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
                   name: 'Interface {#IFNAME}({#IFALIAS}): Link down'
                   opdata: 'Current state: {ITEM.LASTVALUE1}'
                   priority: AVERAGE
-                  description: |
-                    This trigger expression works as follows:
-                    1. It can be triggered if the operations status is down.
-                    2. `{$IFCONTROL:"{#IFNAME}"}=1` - a user can redefine context macro to value - 0. That marks this interface as not important. No new trigger will be fired if this interface is down.
-                    3. `{TEMPLATE_NAME:METRIC.diff()}=1` - the trigger fires only if the operational status was up to (1) sometime before (so, do not fire for the 'eternal off' interfaces.)
-                    
-                    WARNING: if closed manually - it will not fire again on the next poll, because of .diff.
+                  description: 'The operations status this interface is down.'
                   tags:
                     - tag: scope
                       value: availability
             - uuid: 07b9effe0e7e42c581e53d1d5a222b8c
               name: 'Interface {#IFNAME}({#IFALIAS}): Interface type'
               type: DEPENDENT
-              key: 'net.if.type[ifType.{#SNMPINDEX}]'
+              key: 'net.if.type[ifType.{#IFNAME}]'
               delay: '0'
               history: 7d
               trends: '0'
@@ -2326,41 +2452,41 @@ zabbix_export:
           trigger_prototypes:
             - uuid: 77ca3c7f08d047f993cf4f24e32318e2
               expression: |
-                change(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])<0 and last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])>0
+                change(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}])<0 and last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}])>0
                 and (
-                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#SNMPINDEX}])=6 or
-                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#SNMPINDEX}])=7 or
-                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#SNMPINDEX}])=11 or
-                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#SNMPINDEX}])=62 or
-                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#SNMPINDEX}])=69 or
-                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#SNMPINDEX}])=117
+                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#IFNAME}])=6 or
+                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#IFNAME}])=7 or
+                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#IFNAME}])=11 or
+                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#IFNAME}])=62 or
+                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#IFNAME}])=69 or
+                last(/Blockbit NGFW by SNMP/net.if.type[ifType.{#IFNAME}])=117
                 )
                 and
-                (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2)
+                (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])<>2)
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: |
-                (change(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])>0 and last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}],#2)>0) or
-                (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2)
+                (change(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}])>0 and last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}],#2)>0) or
+                (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])=2)
               name: 'Interface {#IFNAME}({#IFALIAS}): Ethernet has changed to lower speed than it was before'
               opdata: 'Current reported speed: {ITEM.LASTVALUE1}'
               priority: INFO
               description: 'This Ethernet connection has transitioned down from its known maximum speed. This might be a sign of autonegotiation issues. Acknowledge to close the problem manually.'
               dependencies:
                 - name: 'Interface {#IFNAME}({#IFALIAS}): Link down'
-                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2 and (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#1)<>last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#2))'
-                  recovery_expression: 'last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
+                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])=2 and (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}],#1)<>last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}],#2))'
+                  recovery_expression: 'last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
               tags:
                 - tag: scope
                   value: performance
             - uuid: 748d4eece8494d8a80bb942ea703d2f8
               expression: |
-                (avg(/Blockbit NGFW by SNMP/net.if.in[ifHCInOctets.{#SNMPINDEX}],15m)>({$IF.UTIL.MAX:"{#IFNAME}"}/100)*last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}]) or
-                avg(/Blockbit NGFW by SNMP/net.if.out[ifHCOutOctets.{#SNMPINDEX}],15m)>({$IF.UTIL.MAX:"{#IFNAME}"}/100)*last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])) and
-                last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])>0
+                (avg(/Blockbit NGFW by SNMP/net.if.in[ifHCInOctets.{#IFNAME}],15m)>({$IF.UTIL.MAX:"{#IFNAME}"}/100)*last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}]) or
+                avg(/Blockbit NGFW by SNMP/net.if.out[ifHCOutOctets.{#IFNAME}],15m)>({$IF.UTIL.MAX:"{#IFNAME}"}/100)*last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}])) and
+                last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}])>0
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: |
-                avg(/Blockbit NGFW by SNMP/net.if.in[ifHCInOctets.{#SNMPINDEX}],15m)<(({$IF.UTIL.MAX:"{#IFNAME}"}-3)/100)*last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}]) and
-                avg(/Blockbit NGFW by SNMP/net.if.out[ifHCOutOctets.{#SNMPINDEX}],15m)<(({$IF.UTIL.MAX:"{#IFNAME}"}-3)/100)*last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#SNMPINDEX}])
+                avg(/Blockbit NGFW by SNMP/net.if.in[ifHCInOctets.{#IFNAME}],15m)<(({$IF.UTIL.MAX:"{#IFNAME}"}-3)/100)*last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}]) and
+                avg(/Blockbit NGFW by SNMP/net.if.out[ifHCOutOctets.{#IFNAME}],15m)<(({$IF.UTIL.MAX:"{#IFNAME}"}-3)/100)*last(/Blockbit NGFW by SNMP/net.if.speed[ifHighSpeed.{#IFNAME}])
               name: 'Interface {#IFNAME}({#IFALIAS}): High bandwidth usage'
               event_name: 'Interface {#IFNAME}({#IFALIAS}): High bandwidth usage (>{$IF.UTIL.MAX:"{#IFNAME}"}%)'
               opdata: 'In: {ITEM.LASTVALUE1}, out: {ITEM.LASTVALUE3}, speed: {ITEM.LASTVALUE2}'
@@ -2368,19 +2494,19 @@ zabbix_export:
               description: 'The utilization of the network interface is close to its estimated maximum bandwidth.'
               dependencies:
                 - name: 'Interface {#IFNAME}({#IFALIAS}): Link down'
-                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2 and (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#1)<>last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#2))'
-                  recovery_expression: 'last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
+                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])=2 and (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}],#1)<>last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}],#2))'
+                  recovery_expression: 'last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
               tags:
                 - tag: scope
                   value: performance
             - uuid: 18f58e7c67e346b1922e80feb040a94f
               expression: |
-                min(/Blockbit NGFW by SNMP/net.if.in.errors[ifInErrors.{#SNMPINDEX}],5m)>{$IF.ERRORS.WARN:"{#IFNAME}"}
-                or min(/Blockbit NGFW by SNMP/net.if.out.errors[ifOutErrors.{#SNMPINDEX}],5m)>{$IF.ERRORS.WARN:"{#IFNAME}"}
+                min(/Blockbit NGFW by SNMP/net.if.in.errors[ifInErrors.{#IFNAME}],5m)>{$IF.ERRORS.WARN:"{#IFNAME}"}
+                or min(/Blockbit NGFW by SNMP/net.if.out.errors[ifOutErrors.{#IFNAME}],5m)>{$IF.ERRORS.WARN:"{#IFNAME}"}
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: |
-                max(/Blockbit NGFW by SNMP/net.if.in.errors[ifInErrors.{#SNMPINDEX}],5m)<{$IF.ERRORS.WARN:"{#IFNAME}"}*0.8
-                and max(/Blockbit NGFW by SNMP/net.if.out.errors[ifOutErrors.{#SNMPINDEX}],5m)<{$IF.ERRORS.WARN:"{#IFNAME}"}*0.8
+                max(/Blockbit NGFW by SNMP/net.if.in.errors[ifInErrors.{#IFNAME}],5m)<{$IF.ERRORS.WARN:"{#IFNAME}"}*0.8
+                and max(/Blockbit NGFW by SNMP/net.if.out.errors[ifOutErrors.{#IFNAME}],5m)<{$IF.ERRORS.WARN:"{#IFNAME}"}*0.8
               name: 'Interface {#IFNAME}({#IFALIAS}): High error rate'
               event_name: 'Interface {#IFNAME}({#IFALIAS}): High error rate (>{$IF.ERRORS.WARN:"{#IFNAME}"} for 5m)'
               opdata: 'errors in: {ITEM.LASTVALUE1}, errors out: {ITEM.LASTVALUE2}'
@@ -2388,8 +2514,8 @@ zabbix_export:
               description: 'It recovers when it is below 80% of the `{$IF.ERRORS.WARN:"{#IFNAME}"}` threshold.'
               dependencies:
                 - name: 'Interface {#IFNAME}({#IFALIAS}): Link down'
-                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])=2 and (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#1)<>last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}],#2))'
-                  recovery_expression: 'last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#SNMPINDEX}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
+                  expression: '{$IFCONTROL:"{#IFNAME}"}=1 and last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])=2 and (last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}],#1)<>last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}],#2))'
+                  recovery_expression: 'last(/Blockbit NGFW by SNMP/net.if.status[ifOperStatus.{#IFNAME}])<>2 or {$IFCONTROL:"{#IFNAME}"}=0'
               tags:
                 - tag: scope
                   value: availability
@@ -2403,37 +2529,37 @@ zabbix_export:
                   color: 199C0D
                   item:
                     host: 'Blockbit NGFW by SNMP'
-                    key: 'net.if.in[ifHCInOctets.{#SNMPINDEX}]'
+                    key: 'net.if.in[ifHCInOctets.{#IFNAME}]'
                 - sortorder: '1'
                   drawtype: BOLD_LINE
                   color: F63100
                   item:
                     host: 'Blockbit NGFW by SNMP'
-                    key: 'net.if.out[ifHCOutOctets.{#SNMPINDEX}]'
+                    key: 'net.if.out[ifHCOutOctets.{#IFNAME}]'
                 - sortorder: '2'
                   color: 00611C
                   yaxisside: RIGHT
                   item:
                     host: 'Blockbit NGFW by SNMP'
-                    key: 'net.if.out.errors[ifOutErrors.{#SNMPINDEX}]'
+                    key: 'net.if.out.errors[ifOutErrors.{#IFNAME}]'
                 - sortorder: '3'
                   color: F7941D
                   yaxisside: RIGHT
                   item:
                     host: 'Blockbit NGFW by SNMP'
-                    key: 'net.if.in.errors[ifInErrors.{#SNMPINDEX}]'
+                    key: 'net.if.in.errors[ifInErrors.{#IFNAME}]'
                 - sortorder: '4'
                   color: FC6EA3
                   yaxisside: RIGHT
                   item:
                     host: 'Blockbit NGFW by SNMP'
-                    key: 'net.if.out.discards[ifOutDiscards.{#SNMPINDEX}]'
+                    key: 'net.if.out.discards[ifOutDiscards.{#IFNAME}]'
                 - sortorder: '5'
                   color: 6C59DC
                   yaxisside: RIGHT
                   item:
                     host: 'Blockbit NGFW by SNMP'
-                    key: 'net.if.in.discards[ifInDiscards.{#SNMPINDEX}]'
+                    key: 'net.if.in.discards[ifInDiscards.{#IFNAME}]'
           master_item:
             key: net.if.walk
           preprocessing:
